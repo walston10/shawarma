@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brazilian Shawarma — Babcock Rd · San Antonio</title>
+<meta name="description" content="Authentic Brazilian shawarma, now in San Antonio. Picanha and frango wraps from $11. Dine-in or pickup at 2026 Babcock Rd.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6EB;
+    --paper:#FFFFFF;
+    --ink:#1F1A14;
+    --ink-soft:#5A4D3F;
+    --orange:#D9531E;
+    --orange-deep:#B43F12;
+    --yellow:#F5C246;
+    --green:#2E7D4F;
+    --rule:rgba(31,26,20,.12);
+    --rule-soft:rgba(31,26,20,.06);
+    --serif:"Fraunces",serif;
+    --sans:"DM Sans",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+
+  /* topbar */
+  .topbar{background:var(--green);color:#fff;font-size:13px;font-weight:500}
+  .topbar-in{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px;flex-wrap:wrap}
+  .topbar a{text-decoration:none}
+  .topbar a:hover{text-decoration:underline}
+  .topbar .dot{width:8px;height:8px;border-radius:50%;background:#9DE3B0;display:inline-block;margin-right:8px;vertical-align:1px;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+
+  /* nav */
+  .nav{position:sticky;top:0;background:var(--cream);border-bottom:1px solid var(--rule-soft);z-index:20}
+  .nav-in{display:flex;align-items:center;gap:24px;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:600;font-size:21px;text-decoration:none;letter-spacing:-.015em;color:var(--ink);font-variation-settings:"opsz" 96}
+  .brand-mark{width:40px;height:40px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-weight:600;font-size:22px;font-variation-settings:"opsz" 96}
+  .nav-links{margin-left:auto;display:flex;gap:28px;align-items:center}
+  .nav-links a{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink)}
+  .nav-links a:hover{color:var(--orange)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:all .15s;font-family:inherit;white-space:nowrap}
+  .btn-primary{background:var(--orange);color:#fff}
+  .btn-primary:hover{background:var(--orange-deep);transform:translateY(-1px)}
+  .btn-ghost{border-color:var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .btn-lg{padding:16px 28px;font-size:16px}
+  @media(max-width:760px){.nav-links a:not(.btn){display:none}}
+
+  /* hero */
+  .hero{padding:clamp(32px,6vw,64px) 0 clamp(40px,7vw,72px)}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+  @media(min-width:880px){.hero-grid{grid-template-columns:1.1fr 1fr;gap:56px}}
+  .hero h1{font-family:var(--serif);font-weight:500;font-variation-settings:"opsz" 144;font-size:clamp(44px,7vw,84px);line-height:1;letter-spacing:-.025em;margin:0 0 20px;text-wrap:balance}
+  .hero h1 .accent{font-style:italic;font-weight:500}
+  .hero h1 .accent{color:var(--orange)}
+  .hero-sub{font-size:18px;line-height:1.5;color:var(--ink-soft);margin:0 0 28px;max-width:46ch}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px}
+  .hero-stats{display:flex;flex-wrap:wrap;gap:32px;font-size:13px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.1em}
+  .hero-stats b{color:var(--ink);font-weight:700;display:block;font-size:22px;font-family:var(--serif);text-transform:none;letter-spacing:-.01em;margin-bottom:2px}
+  .hero-photo{aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#E8DDC4,#D9C9A6);position:relative;display:flex;align-items:flex-end;padding:20px;box-shadow:0 12px 40px rgba(31,26,20,.08)}
+  .hero-photo::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(217,83,30,.05) 0 16px,transparent 16px 32px)}
+  .ph-tag{position:relative;font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:#fff;padding:8px 12px;border-radius:6px;font-weight:600;color:var(--ink-soft);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+  .ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+  /* info strip */
+  .strip{background:var(--paper);border-top:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft)}
+  .strip-grid{display:grid;grid-template-columns:1fr;gap:24px;padding:28px 0}
+  @media(min-width:760px){.strip-grid{grid-template-columns:repeat(3,1fr);gap:32px}}
+  .strip-item h4{margin:0 0 4px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);font-weight:700}
+  .strip-item p{margin:0;font-size:15px;font-weight:500;line-height:1.4}
+  .strip-item a{text-decoration:none}
+  .strip-item a:hover{color:var(--orange)}
+
+  /* gallery */
+  .gallery{padding:clamp(56px,8vw,88px) 0;background:var(--paper);overflow:hidden}
+  .gallery-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+  .gallery-head h2{font-family:var(--serif);font-weight:500;font-variation-settings:"opsz" 144;font-size:clamp(34px,5vw,52px);margin:0 0 6px;letter-spacing:-.025em;line-height:1.05}
+  .gallery-head h2 .accent{font-style:italic;color:var(--orange)}
+  .gallery-head .lede{font-size:15px;color:var(--ink-soft);margin:0;max-width:36ch}
+  .gallery-controls{display:flex;gap:8px}
+  .g-arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:all .15s}
+  .g-arrow:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .g-arrow:disabled{opacity:.35;cursor:default}
+  .g-arrow:disabled:hover{background:var(--paper);color:var(--ink);border-color:var(--rule)}
+  .gallery-scroll{overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scroll-padding:0 clamp(20px,4vw,40px);scrollbar-width:none;-ms-overflow-style:none;margin:0 calc(clamp(20px,4vw,40px) * -1)}
+  .gallery-scroll::-webkit-scrollbar{display:none}
+  .gallery-track{display:flex;gap:16px;padding:4px clamp(20px,4vw,40px) 4px;width:max-content}
+  .g-tile{flex:0 0 auto;width:min(82vw,440px);aspect-ratio:4/5;margin:0;border-radius:14px;background:linear-gradient(135deg,#E8DDC4,#D9C9A6);position:relative;display:flex;align-items:flex-end;padding:18px;scroll-snap-align:start;box-shadow:0 4px 16px rgba(31,26,20,.06);overflow:hidden}
+  .g-tile:nth-child(2n){background:linear-gradient(135deg,#D9C9A6,#C9B485)}
+  .g-tile:nth-child(3n){background:linear-gradient(135deg,#E5D5B8,#D4BD92)}
+  .g-tile::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(217,83,30,.05) 0 16px,transparent 16px 32px)}
+
+  /* menu */
+  .menu{padding:clamp(56px,8vw,96px) 0}
+  .section-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:40px}
+  .section-head h2{font-family:var(--serif);font-weight:500;font-variation-settings:"opsz" 144;font-size:clamp(34px,5vw,52px);margin:0;letter-spacing:-.025em;line-height:1.05}
+  .section-head h2 .accent{font-style:italic;color:var(--orange)}
+  .section-head .lede{font-size:15px;color:var(--ink-soft);max-width:36ch;margin:0}
+
+  .menu-grid{display:grid;grid-template-columns:1fr;gap:24px}
+  @media(min-width:640px){.menu-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:980px){.menu-grid{grid-template-columns:repeat(3,1fr)}}
+  .item{background:var(--paper);border-radius:14px;overflow:hidden;border:1px solid var(--rule-soft);transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column}
+  .item:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(31,26,20,.08)}
+  .item-photo{aspect-ratio:4/3;background:linear-gradient(135deg,#E8DDC4,#D9C9A6);position:relative;display:flex;align-items:flex-end;padding:14px}
+  .item-photo::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(217,83,30,.05) 0 14px,transparent 14px 28px)}
+  .item-body{padding:20px;flex:1;display:flex;flex-direction:column}
+  .item-name{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 6px;font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:-.01em;line-height:1.15}
+  .item-price{color:var(--orange);font-weight:700;font-size:17px;font-family:var(--sans);white-space:nowrap}
+  .item-desc{font-size:14px;color:var(--ink-soft);line-height:1.45;margin:0 0 12px;flex:1}
+  .item-tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--green);background:rgba(46,125,79,.1);padding:4px 8px;border-radius:4px}
+  .tag.house{color:var(--orange);background:rgba(217,83,30,.1)}
+
+  /* sub menu */
+  .submenu{margin-top:56px;padding-top:48px;border-top:1px solid var(--rule)}
+  .submenu-grid{display:grid;grid-template-columns:1fr;gap:40px}
+  @media(min-width:760px){.submenu-grid{grid-template-columns:1fr 1fr;gap:64px}}
+  .submenu h3{font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 12px;letter-spacing:-.01em}
+  .row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:12px 0;border-bottom:1px dotted var(--rule)}
+  .row:last-child{border:none}
+  .row .nm{font-weight:600;font-size:16px}
+  .row .pr{color:var(--orange);font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
+  .row .ds{grid-column:1/-1;font-size:13px;color:var(--ink-soft);line-height:1.4}
+
+  /* combo */
+  .combo{background:var(--ink);color:var(--cream);padding:clamp(48px,7vw,80px) 0}
+  .combo-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
+  @media(min-width:760px){.combo-grid{grid-template-columns:1fr auto}}
+  .combo-eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--yellow);font-weight:700;margin-bottom:14px}
+  .combo h2{font-family:var(--serif);font-size:clamp(32px,5vw,48px);font-weight:500;font-variation-settings:"opsz" 144;margin:0 0 12px;letter-spacing:-.02em;line-height:1.05}
+  .combo h2 .accent{font-style:italic;color:var(--yellow)}
+  .combo p{font-size:16px;color:rgba(251,246,235,.78);margin:0;max-width:48ch;line-height:1.55}
+  .combo-price{font-family:var(--serif);font-weight:700;color:var(--yellow);line-height:1;display:flex;align-items:baseline;gap:4px}
+  .combo-price .amt{font-size:88px}
+  .combo-price small{font-size:18px;font-weight:500;color:rgba(251,246,235,.6);text-transform:uppercase;letter-spacing:.08em}
+
+  /* about */
+  .about{padding:clamp(56px,8vw,96px) 0}
+  .about-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+  @media(min-width:880px){.about-grid{grid-template-columns:1fr 1.1fr;gap:64px}}
+  .about-photo{aspect-ratio:1/1;border-radius:16px;background:linear-gradient(135deg,#D9C9A6,#C2A878);position:relative;display:flex;align-items:flex-end;padding:20px;box-shadow:0 12px 40px rgba(31,26,20,.08)}
+  .about-photo::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(31,26,20,.04) 0 16px,transparent 16px 32px)}
+  .about-eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:12px}
+  .about h2{font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:500;font-variation-settings:"opsz" 144;margin:0 0 18px;letter-spacing:-.02em;line-height:1.1}
+  .about h2 .accent{font-style:italic;color:var(--orange)}
+  .about p{font-size:17px;line-height:1.6;color:var(--ink-soft);margin:0 0 16px}
+  .about p:last-child{margin-bottom:0}
+  .placeholder-note{font-size:12px;color:var(--orange);font-style:italic;margin-bottom:16px}
+
+  /* visit */
+  .visit{background:var(--paper);padding:clamp(56px,8vw,96px) 0}
+  .visit-grid{display:grid;grid-template-columns:1fr;gap:40px}
+  @media(min-width:880px){.visit-grid{grid-template-columns:1.4fr 1fr;gap:48px}}
+  .map{aspect-ratio:16/10;border-radius:14px;border:1px solid var(--rule-soft);overflow:hidden;position:relative}
+  .map iframe{width:100%;height:100%;border:0;display:block}
+  .visit-info h3{font-family:var(--serif);font-size:32px;font-weight:500;font-variation-settings:"opsz" 96;margin:0 0 24px;letter-spacing:-.02em;line-height:1.1}
+  .visit-block{margin-bottom:22px}
+  .visit-block h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);font-weight:700;margin:0 0 6px}
+  .visit-block p,.visit-block a{margin:0;font-size:16px;text-decoration:none;line-height:1.45}
+  .visit-block a:hover{color:var(--orange)}
+  .hours{font-variant-numeric:tabular-nums;font-size:15px}
+  .hours div{display:flex;justify-content:space-between;padding:3px 0;gap:24px}
+  .hours .today{font-weight:700;color:var(--green)}
+
+  /* instagram */
+  .ig{padding:clamp(56px,8vw,96px) 0}
+  .ig-head{text-align:center;margin-bottom:32px}
+  .ig-head h2{font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:500;font-variation-settings:"opsz" 144;margin:0 0 6px;letter-spacing:-.02em}
+  .ig-head a{color:var(--orange);text-decoration:none;font-weight:600;font-size:16px}
+  .ig-head a:hover{text-decoration:underline}
+  .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  @media(min-width:760px){.ig-grid{grid-template-columns:repeat(6,1fr)}}
+  .ig-tile{aspect-ratio:1/1;background:linear-gradient(135deg,#E8DDC4,#D9C9A6);position:relative;overflow:hidden;border-radius:6px}
+  .ig-tile::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(217,83,30,.05) 0 12px,transparent 12px 24px)}
+  .ig-tile span{position:absolute;left:8px;bottom:8px;font-size:9px;text-transform:uppercase;letter-spacing:.14em;background:#fff;padding:3px 6px;border-radius:3px;font-weight:600;color:var(--ink-soft)}
+
+  /* review CTA */
+  .review-cta{background:var(--orange);color:#fff;padding:clamp(48px,7vw,72px) 0;text-align:center}
+  .review-cta h2{font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:500;font-variation-settings:"opsz" 144;margin:0 0 12px;letter-spacing:-.02em}
+  .review-cta p{margin:0 auto 24px;max-width:42ch;color:rgba(255,255,255,.9);font-size:16px;line-height:1.5}
+  .review-cta .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn-light{background:#fff;color:var(--ink);border-color:transparent}
+  .btn-light:hover{background:var(--cream);transform:translateY(-1px)}
+  .btn-out{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+  .btn-out:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+
+  /* footer */
+  footer{padding:32px 0;border-top:1px solid var(--rule-soft);background:var(--cream)}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--ink-soft)}
+  .foot-social{display:flex;gap:10px}
+  .foot-social a{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid var(--rule);border-radius:50%;color:var(--ink);text-decoration:none;transition:all .15s}
+  .foot-social a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span><span class="dot"></span> Open today · Wraps from $11 · 2026 Babcock Rd</span>
+    <a href="tel:+12108884114">(210) 888-4114</a>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="brand">
+      <span class="brand-mark">S</span>
+      Brazilian Shawarma
+    </a>
+    <nav class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#visit">Visit</a>
+      <a href="tel:+12108884114" class="btn btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call to Order
+      </a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Brazilian shawarma, <span class="accent">finally in San Antonio.</span></h1>
+        <p class="hero-sub">Picanha and chicken slow-roasted on the vertical spit, carved into warm flatbread with garlic sauce and fresh chimichurri. Brazilian street food, finally in San Antonio.</p>
+        <div class="hero-ctas">
+          <a href="tel:+12108884114" class="btn btn-primary btn-lg">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call to Order
+          </a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=2026+Babcock+Rd+Suite+103+San+Antonio+TX+78229" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Get Directions
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div><b>By hand</b>Brazilian flavors</div>
+          <div><b>Made daily</b>Fresh, from scratch</div>
+          <div><b>11a – 9p</b>Open today</div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <span class="ph-tag">📷 Hero — picanha wrap, full frame</span>
+        <img src="img/hero.jpg" alt="Picanha shawarma wrap" class="ph-img" onerror="this.remove()">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap strip-grid">
+    <div class="strip-item">
+      <h4>Find us</h4>
+      <p><a href="https://www.google.com/maps/dir/?api=1&destination=2026+Babcock+Rd+Suite+103+San+Antonio+TX+78229" target="_blank" rel="noopener">2026 Babcock Rd · Ste 103</a></p>
+    </div>
+    <div class="strip-item">
+      <h4>Call</h4>
+      <p><a href="tel:+12108884114">(210) 888-4114</a></p>
+    </div>
+    <div class="strip-item">
+      <h4>Hours</h4>
+      <p>Today · 11a – 9p</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div>
+        <h2>On the <span class="accent">rotisserie.</span></h2>
+        <p class="lede">Up close — what's coming off the cone today.</p>
+      </div>
+      <div class="gallery-controls">
+        <button class="g-arrow" id="g-prev" aria-label="Previous">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+        </button>
+        <button class="g-arrow" id="g-next" aria-label="Next">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="gallery-scroll" id="gallery-scroll">
+      <div class="gallery-track">
+        <figure class="g-tile"><span class="ph-tag">📷 Picanha cone, mid-shave</span><img src="img/g-rotisserie.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g-tile"><span class="ph-tag">📷 Wrap, half-folded</span><img src="img/g-wrap.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g-tile"><span class="ph-tag">📷 Frango on grill</span><img src="img/g-chicken.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g-tile"><span class="ph-tag">📷 Laffa from oven</span><img src="img/g-bread.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g-tile"><span class="ph-tag">📷 Bowl, top-down</span><img src="img/g-bowl.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g-tile"><span class="ph-tag">📷 Skewers, charcoal</span><img src="img/g-skewers.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g-tile"><span class="ph-tag">📷 Chimichurri pour</span><img src="img/g-sauce.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></figure>
+        <figure class="g-tile"><span class="ph-tag">📷 Counter scene</span><img src="img/g-counter.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The menu.</h2>
+      <p class="lede">Wraps, plates, and small bites.</p>
+    </div>
+
+    <div class="menu-grid">
+      <div class="item">
+        <div class="item-photo"><span class="ph-tag">📷 Picanha Shawarma</span><img src="img/m-picanha.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></div>
+        <div class="item-body">
+          <div class="item-name">Picanha Shawarma <span class="item-price">$14</span></div>
+          <p class="item-desc">Premium beef cap, vertical rotisserie, in toasted laffa with chimichurri-tahini, pickled onion, and torn mint.</p>
+          <div class="item-tags"><span class="tag house">Most ordered</span></div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-photo"><span class="ph-tag">📷 Frango Brasileiro</span><img src="img/m-frango.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></div>
+        <div class="item-body">
+          <div class="item-name">Frango Brasileiro <span class="item-price">$12</span></div>
+          <p class="item-desc">Marinated chicken thigh with farofa crust, garlic toum, and amba-mango. Wrap or rice plate.</p>
+          <div class="item-tags"></div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-photo"><span class="ph-tag">📷 Shawarma Bowl</span><img src="img/m-bowl.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></div>
+        <div class="item-body">
+          <div class="item-name">Shawarma Bowl <span class="item-price">$15</span></div>
+          <p class="item-desc">Saffron rice, picanha or frango, black bean hummus, pickled veg, chimichurri.</p>
+          <div class="item-tags"></div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-photo"><span class="ph-tag">📷 Skewer Plate</span><img src="img/m-skewers.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></div>
+        <div class="item-body">
+          <div class="item-name">Linguiça &amp; Kafta Skewers <span class="item-price">$13</span></div>
+          <p class="item-desc">Brazilian sausage and lamb kafta, charcoal-grilled, with vinagrete and pita.</p>
+          <div class="item-tags"></div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-photo"><span class="ph-tag">📷 Pão de Queijo Sliders</span><img src="img/m-sliders.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></div>
+        <div class="item-body">
+          <div class="item-name">Pão de Queijo Sliders <span class="item-price">$11</span></div>
+          <p class="item-desc">Two warm Brazilian cheese breads stuffed with shawarma, garlic sauce, and crispy onions.</p>
+          <div class="item-tags"></div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-photo"><span class="ph-tag">📷 Coxinha Falafel</span><img src="img/m-coxinha.jpg" alt="" class="ph-img" loading="lazy" onerror="this.remove()"></div>
+        <div class="item-body">
+          <div class="item-name">Coxinha Falafel <span class="item-price">$9</span></div>
+          <p class="item-desc">Chickpea fritters, coxinha-style, with shredded chicken and tahini-lime.</p>
+          <div class="item-tags"><span class="tag house">House special</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="submenu">
+      <div class="submenu-grid">
+        <div>
+          <h3>Sides &amp; small plates</h3>
+          <div class="row"><span class="nm">Feijoada Hummus</span><span class="pr">$8</span><span class="ds">Black bean hummus, smoked paprika oil, farofa crumble, warm pita.</span></div>
+          <div class="row"><span class="nm">Hearts of Palm Tabbouleh</span><span class="pr">$9</span><span class="ds">Bulgur, palmito, mint, lemon, cherry tomato.</span></div>
+          <div class="row"><span class="nm">Saffron Rice</span><span class="pr">$4</span></div>
+          <div class="row"><span class="nm">Rice &amp; Beans</span><span class="pr">$4</span><span class="ds">Brazilian arroz e feijão — black beans, white rice, scallion.</span></div>
+        </div>
+        <div>
+          <h3>Sweets &amp; sips</h3>
+          <div class="row"><span class="nm">Brigadeiro Baklava</span><span class="pr">$7</span><span class="ds">Phyllo with Brazilian chocolate fudge, cashews, honey.</span></div>
+          <div class="row"><span class="nm">Iced Tea</span><span class="pr">$3</span><span class="ds">Sweet or unsweet, brewed daily.</span></div>
+          <div class="row"><span class="nm">Fountain Soda</span><span class="pr">$3</span><span class="ds">Coke, Diet Coke, Sprite, Dr Pepper.</span></div>
+          <div class="row"><span class="nm">Guaraná Antarctica</span><span class="pr">$3</span><span class="ds">Brazilian guaraná soda — bottled.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="combo">
+  <div class="wrap">
+    <div class="combo-grid">
+      <div>
+        <div class="combo-eyebrow">Lunch combo · 11a–3p · Mon–Fri</div>
+        <h2>Wrap + side + <span class="accent">drink.</span></h2>
+        <p>Pick any wrap, any side, a drink. Available at the counter or online for pickup.</p>
+      </div>
+      <div class="combo-price"><span style="font-size:36px;font-weight:500;align-self:flex-start;margin-top:8px">$</span><span class="amt">13</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Find us.</h2>
+      <p class="lede">Just off the medical center corridor on Babcock. Easy parking out front.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=2026+Babcock+Rd+Suite+103+San+Antonio+TX+78229&output=embed&z=16" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Brazilian Shawarma"></iframe>
+      </div>
+      <div class="visit-info">
+        <h3>2026 Babcock Rd</h3>
+        <div class="visit-block">
+          <h4>Address</h4>
+          <p>Suite 103<br>San Antonio, TX 78229</p>
+        </div>
+        <div class="visit-block">
+          <h4>Phone</h4>
+          <p><a href="tel:+12108884114">(210) 888-4114</a></p>
+        </div>
+        <div class="visit-block">
+          <h4>Hours</h4>
+          <div class="hours">
+            <div class="today"><span>Today</span><span>11a – 9p</span></div>
+            <div><span>Mon–Thu</span><span>11a – 9p</span></div>
+            <div><span>Fri–Sat</span><span>11a – 10p</span></div>
+            <div><span>Sun</span><span>12p – 8p</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="review-cta">
+  <div class="wrap">
+    <h2>Eat well? Tell people.</h2>
+    <p>We're a small place. A kind word online goes a long way.</p>
+    <div class="ctas">
+      <a class="btn btn-light btn-lg" href="https://share.google/bekzaeipnNQIluM69" target="_blank" rel="noopener">★ Review on Google</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Brazilian Shawarma · San Antonio, TX</span>
+    <div class="foot-social">
+      <a href="#" target="_blank" rel="noopener" title="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.7c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+      </a>
+      <a href="#" target="_blank" rel="noopener" title="TikTok">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.6c-1.4-.5-2.5-1.6-3-3h-3.4v12.5a2.5 2.5 0 1 1-2.5-2.5c.3 0 .5 0 .8.1V9.7c-.3 0-.5-.1-.8-.1a5.9 5.9 0 1 0 5.9 5.9V9.7c1.2.9 2.7 1.4 4.4 1.4V7.7c-1.6 0-3.1-.5-4.4-1.1z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var s=document.getElementById('gallery-scroll');
+    var prev=document.getElementById('g-prev');
+    var next=document.getElementById('g-next');
+    if(!s||!prev||!next) return;
+    function step(){var t=s.querySelector('.g-tile');return t?t.getBoundingClientRect().width+16:440;}
+    function update(){
+      prev.disabled=s.scrollLeft<=2;
+      next.disabled=s.scrollLeft+s.clientWidth>=s.scrollWidth-2;
+    }
+    prev.addEventListener('click',function(){s.scrollBy({left:-step(),behavior:'smooth'});});
+    next.addEventListener('click',function(){s.scrollBy({left:step(),behavior:'smooth'});});
+    s.addEventListener('scroll',update,{passive:true});
+    window.addEventListener('resize',update);
+    update();
+  })();
+</script>
+
+</body>
+</html>

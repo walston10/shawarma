@@ -805,20 +805,34 @@
     update();
   })();
 
-  // Menu nav: highlight current section + smooth scroll
+  // Menu nav: highlight current section based on viewport position
   (function(){
     var links=document.querySelectorAll('#menu-nav a');
     if(!links.length) return;
-    var sections=Array.from(links).map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+    var pairs=Array.from(links).map(function(a){
+      var sec=document.querySelector(a.getAttribute('href'));
+      return sec?{link:a,sec:sec}:null;
+    }).filter(Boolean);
+
+    function navOffset(){
+      var topNav=document.querySelector('.nav');
+      var menuNav=document.querySelector('.menu-nav');
+      var h=(topNav?topNav.offsetHeight:0)+(menuNav?menuNav.offsetHeight:0);
+      return h+24;
+    }
+
     function setActive(){
-      var y=window.scrollY+200;
-      var current=sections[0];
-      sections.forEach(function(sec){if(sec.offsetTop<=y) current=sec;});
-      links.forEach(function(a){
-        a.classList.toggle('active', a.getAttribute('href')==='#'+current.id);
+      var threshold=navOffset();
+      var current=pairs[0];
+      pairs.forEach(function(p){
+        if(p.sec.getBoundingClientRect().top<=threshold) current=p;
+      });
+      pairs.forEach(function(p){
+        p.link.classList.toggle('active', p===current);
       });
     }
     window.addEventListener('scroll',setActive,{passive:true});
+    window.addEventListener('resize',setActive);
     setActive();
   })();
 </script>

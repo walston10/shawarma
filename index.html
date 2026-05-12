@@ -315,7 +315,7 @@
 
 <div class="topbar">
   <div class="wrap topbar-in">
-    <span><span class="dot"></span>Open today · Halal · 2026 Babcock Rd, San Antonio</span>
+    <span><span class="dot"></span>Open today · 10a – 5p · Halal · 2026 Babcock Rd, San Antonio</span>
     <span style="display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap">
       <span class="pill">حلال · Halal</span>
       <a href="tel:+12108884114">(210) 888-4114</a>
@@ -415,7 +415,7 @@
         </span>
         <div>
           <h4>Hours</h4>
-          <p>Today · 11a – 9p</p>
+          <p>Today · 10a – 5p</p>
         </div>
       </div>
       <div class="strip-item halal">
@@ -725,10 +725,9 @@
         <div class="visit-block">
           <h4>Hours</h4>
           <div class="hours">
-            <div class="today"><span>Today</span><span>11a – 9p</span></div>
-            <div><span>Mon–Thu</span><span>11a – 9p</span></div>
-            <div><span>Fri–Sat</span><span>11a – 10p</span></div>
-            <div><span>Sun</span><span>12p – 8p</span></div>
+            <div class="today"><span>Today</span><span>10a – 5p</span></div>
+            <div><span>Mon–Sat</span><span>10a – 5p</span></div>
+            <div><span>Sun</span><span>Closed</span></div>
           </div>
         </div>
       </div>
@@ -764,9 +763,8 @@
       </div>
       <div class="foot-col">
         <h5>Hours</h5>
-        <p>Mon–Thu · 11a – 9p</p>
-        <p>Fri–Sat · 11a – 10p</p>
-        <p>Sun · 12p – 8p</p>
+        <p>Mon–Sat · 10a – 5p</p>
+        <p>Sun · Closed</p>
       </div>
     </div>
     <div class="foot-bottom">
@@ -805,20 +803,34 @@
     update();
   })();
 
-  // Menu nav: highlight current section + smooth scroll
+  // Menu nav: highlight current section based on viewport position
   (function(){
     var links=document.querySelectorAll('#menu-nav a');
     if(!links.length) return;
-    var sections=Array.from(links).map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+    var pairs=Array.from(links).map(function(a){
+      var sec=document.querySelector(a.getAttribute('href'));
+      return sec?{link:a,sec:sec}:null;
+    }).filter(Boolean);
+
+    function navOffset(){
+      var topNav=document.querySelector('.nav');
+      var menuNav=document.querySelector('.menu-nav');
+      var h=(topNav?topNav.offsetHeight:0)+(menuNav?menuNav.offsetHeight:0);
+      return h+24;
+    }
+
     function setActive(){
-      var y=window.scrollY+200;
-      var current=sections[0];
-      sections.forEach(function(sec){if(sec.offsetTop<=y) current=sec;});
-      links.forEach(function(a){
-        a.classList.toggle('active', a.getAttribute('href')==='#'+current.id);
+      var threshold=navOffset();
+      var current=pairs[0];
+      pairs.forEach(function(p){
+        if(p.sec.getBoundingClientRect().top<=threshold) current=p;
+      });
+      pairs.forEach(function(p){
+        p.link.classList.toggle('active', p===current);
       });
     }
     window.addEventListener('scroll',setActive,{passive:true});
+    window.addEventListener('resize',setActive);
     setActive();
   })();
 </script>

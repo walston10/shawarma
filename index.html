@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Capital Taco &amp; Shawarma — Middle East Meets Mexico · San Antonio</title>
-<meta name="description" content="Middle East meets Mexico on Babcock Rd. Shawarma tacos, kabob platters, kafta, kunafa and more — bold flavors, two cultures, halal. 2026 Babcock Rd, San Antonio.">
+<title>Taco Capital — A Fusion of Levantine and Mexican Flavor · San Antonio</title>
+<meta name="description" content="Taco Capital. A fusion of Levantine and Mexican flavor. Tacos, platters, desserts and catering. 2026 Babcock Rd, San Antonio · (210) 888-4114.">
 <meta name="theme-color" content="#0a0907">
-<meta property="og:title" content="Capital Taco &amp; Shawarma">
-<meta property="og:description" content="Middle East meets Mexico. Bold flavors, two cultures, one unforgettable bite. Halal. 2026 Babcock Rd, San Antonio.">
+<meta property="og:title" content="Taco Capital">
+<meta property="og:description" content="A Fusion of Levantine and Mexican Flavor. Bold Spices. Warm Traditions. One Unforgettable Experience.">
 <meta property="og:image" content="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,8 +119,11 @@
   .hero h1 .l1{display:block;color:var(--cream)}
   .hero h1 .l2{display:block;font-family:var(--serif);font-style:italic;font-weight:600;font-size:.46em;letter-spacing:.005em;text-transform:none;color:var(--gold);line-height:1;margin:.18em 0}
   .hero h1 .l3{display:block;color:var(--flame)}
-  .hero-sub{font-size:18px;line-height:1.55;color:var(--ink-soft);margin:0 0 32px;max-width:48ch}
-  .hero-sub b{color:var(--cream);font-weight:600}
+  .hero-tagline{display:inline-block;font-family:var(--display-2);font-size:clamp(14px,2vw,18px);letter-spacing:.18em;text-transform:uppercase;color:var(--cream);background:rgba(245,193,63,.06);border:1px solid var(--rule);padding:10px 18px;border-radius:6px;margin:0 0 22px}
+  .hero-tagline .lev{color:var(--teal)}
+  .hero-tagline .mex{color:var(--flame)}
+  .hero-sub{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.4vw,24px);line-height:1.4;color:var(--gold-soft);margin:0 0 36px;max-width:52ch;font-weight:500}
+  .hero-sub i{font-style:italic}
   .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
   .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-top:1px solid var(--rule-soft);padding-top:24px}
   .hero-stats > div{padding-right:16px;border-right:1px solid var(--rule-soft);min-width:0}
@@ -142,27 +145,27 @@
   .spicebar-item .alt{color:var(--cream)}
   @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-  /* featured trio (matches printed menu callouts) */
-  .featured{padding:clamp(48px,7vw,80px) 0;position:relative}
-  .featured::before{content:'';position:absolute;inset:0;background:radial-gradient(700px 360px at 50% 20%, rgba(245,193,63,.06), transparent 60%);pointer-events:none}
+  /* featured photos */
+  .featured{padding:clamp(48px,7vw,84px) 0;position:relative}
+  .featured::before{content:'';position:absolute;inset:0;background:radial-gradient(800px 400px at 50% 0%, rgba(245,193,63,.06), transparent 60%);pointer-events:none}
   .featured-head{text-align:center;max-width:680px;margin:0 auto 36px;position:relative}
   .featured-head .eyebrow{display:block;margin-bottom:12px}
   .featured-head h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,56px);margin:0;letter-spacing:.005em;line-height:.95;text-transform:uppercase;color:var(--cream)}
   .featured-head h2 .script{font-family:var(--serif);font-weight:600;font-style:italic;text-transform:none;color:var(--gold);letter-spacing:0;font-size:.78em}
-  .featured-head p{font-size:15px;color:var(--ink-soft);margin:14px 0 0;line-height:1.55}
-  .featured-grid{display:grid;grid-template-columns:1fr;gap:18px;position:relative}
-  @media(min-width:760px){.featured-grid{grid-template-columns:repeat(3,1fr);gap:22px}}
-  .featured-card{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--rule);background:#0a0907;aspect-ratio:4/3;display:block;transition:transform .2s ease, box-shadow .2s ease}
-  .featured-card:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(238,90,36,.18), 0 0 0 1px var(--gold)}
+  .featured-grid{display:grid;grid-template-columns:1fr;gap:14px;position:relative}
+  @media(min-width:560px){.featured-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:960px){.featured-grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+  .featured-card{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--rule);background:#0a0907;aspect-ratio:4/5;display:block;transition:transform .2s ease, box-shadow .2s ease}
+  .featured-card:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(238,90,36,.20), 0 0 0 1px var(--gold)}
   .featured-card img{width:100%;height:100%;object-fit:cover;display:block}
-  .featured-card .meta{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;background:linear-gradient(180deg, transparent, rgba(0,0,0,.85));color:var(--cream);font-family:var(--display-2);font-size:14px;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:space-between;gap:14px}
-  .featured-card .meta .arrow{width:32px;height:32px;border-radius:50%;border:1px solid var(--gold);display:inline-flex;align-items:center;justify-content:center;color:var(--gold);transition:background .15s, color .15s}
+  .featured-card .meta{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(180deg, transparent, rgba(0,0,0,.88));color:var(--cream);font-family:var(--display-2);font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .featured-card .meta .arrow{width:30px;height:30px;border-radius:50%;border:1px solid var(--gold);display:inline-flex;align-items:center;justify-content:center;color:var(--gold);transition:background .15s, color .15s;flex:0 0 auto}
   .featured-card:hover .meta .arrow{background:var(--gold);color:#0a0907}
 
   /* info strip */
   .strip{background:var(--bg-2);border-bottom:1px solid var(--rule-soft)}
   .strip-grid{display:grid;grid-template-columns:1fr;gap:0;padding:0}
-  @media(min-width:760px){.strip-grid{grid-template-columns:repeat(4,1fr)}}
+  @media(min-width:760px){.strip-grid{grid-template-columns:repeat(3,1fr)}}
   .strip-item{padding:24px clamp(16px,2.4vw,24px);border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);display:flex;align-items:center;gap:14px}
   .strip-item:last-child{border-right:none}
   @media(max-width:759px){.strip-item{border-right:none}}
@@ -171,10 +174,6 @@
   .strip-item p{margin:0;font-size:14.5px;font-weight:500;line-height:1.35;color:var(--cream)}
   .strip-item a{text-decoration:none}
   .strip-item a:hover{color:var(--gold)}
-  .strip-item.halal{background:linear-gradient(135deg, rgba(46,125,79,.18), rgba(46,125,79,0));}
-  .strip-item.halal .strip-icon{border-color:#3DDC84;color:#3DDC84}
-  .strip-item.halal h4{color:#3DDC84}
-
   /* section base */
   section{position:relative}
   .section-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:44px}
@@ -232,41 +231,6 @@
   .drinks .d{padding:14px 16px;background:var(--card);border:1px solid var(--rule-soft);border-radius:8px;font-family:var(--display-2);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);display:flex;align-items:center;gap:10px}
   .drinks .d::before{content:'';width:8px;height:8px;background:var(--flame);border-radius:50%;flex:0 0 auto}
 
-  /* spice your way */
-  .spiceyour{margin-top:24px;padding:28px 30px;background:linear-gradient(135deg, rgba(238,90,36,.10), rgba(245,193,63,.04));border:1px solid var(--rule);border-radius:14px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
-  @media(max-width:640px){.spiceyour{grid-template-columns:1fr;gap:14px}}
-  .spiceyour h4{margin:0 0 4px;font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.02em;text-transform:uppercase;color:var(--gold)}
-  .spiceyour p{margin:0;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
-  .spiceyour-list{display:flex;flex-wrap:wrap;gap:8px}
-  .spiceyour-list span{padding:8px 14px;border:1px solid var(--rule);border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);background:rgba(0,0,0,.4)}
-  .spiceyour-list span.hot{color:var(--flame);border-color:rgba(238,90,36,.5)}
-  .spiceyour-list span.gold{color:var(--gold);border-color:rgba(245,193,63,.5)}
-
-  /* fusion callout */
-  .fusion{background:#000;padding:clamp(56px,8vw,88px) 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);position:relative;overflow:hidden}
-  .fusion::before{content:'';position:absolute;inset:0;background:
-    radial-gradient(600px 320px at 20% 30%, rgba(238,90,36,.18), transparent 60%),
-    radial-gradient(600px 320px at 80% 70%, rgba(245,193,63,.12), transparent 60%);
-    pointer-events:none}
-  .fusion-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center;position:relative}
-  @media(min-width:880px){.fusion-grid{grid-template-columns:1.2fr 1fr;gap:64px}}
-  .fusion h2{font-family:var(--display);font-weight:400;font-size:clamp(42px,6.5vw,80px);margin:0 0 18px;letter-spacing:.005em;line-height:.92;text-transform:uppercase;color:var(--cream)}
-  .fusion h2 .l1{display:block;color:var(--cream)}
-  .fusion h2 .l2{display:block;font-family:var(--serif);font-style:italic;font-weight:600;font-size:.42em;letter-spacing:0;text-transform:none;color:var(--gold);margin:.1em 0}
-  .fusion h2 .l3{display:block;color:var(--flame)}
-  .fusion p{font-size:17px;color:var(--ink-soft);max-width:48ch;margin:0 0 28px;line-height:1.55}
-  .fusion-pillars{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  .pillar{padding:18px 20px;background:rgba(245,193,63,.06);border:1px solid var(--rule);border-radius:12px}
-  .pillar b{display:block;font-family:var(--display-2);font-size:14px;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
-  .pillar span{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
-  .fusion-badge{aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 50% 35%,#2a1808,#0a0907 70%);border:2px solid var(--gold);position:relative;display:flex;align-items:center;justify-content:center;padding:36px;box-shadow:0 0 0 8px rgba(245,193,63,.05), 0 0 0 1px var(--gold) inset}
-  .fusion-badge::before{content:'';position:absolute;inset:16px;border-radius:50%;border:1px solid var(--rule)}
-  .fusion-badge .inner{text-align:center;position:relative;z-index:2}
-  .fusion-badge .inner .top{font-family:var(--display);font-size:34px;color:var(--cream);line-height:1;letter-spacing:.02em;text-transform:uppercase}
-  .fusion-badge .inner .mid{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--gold);margin:6px 0;line-height:1}
-  .fusion-badge .inner .bot{font-family:var(--display);font-size:34px;color:var(--flame);line-height:1;letter-spacing:.02em;text-transform:uppercase}
-  .fusion-badge .inner .stars{color:var(--gold);font-size:14px;margin-top:8px;letter-spacing:.4em}
-
   /* visit */
   .visit{padding:clamp(56px,8vw,96px) 0;background:var(--bg-2);border-top:1px solid var(--rule-soft)}
   .visit-grid{display:grid;grid-template-columns:1fr;gap:40px}
@@ -317,21 +281,18 @@
 
 <div class="topbar">
   <div class="wrap topbar-in">
-    <span><span class="dot"></span>Open today · 10a – 5p · Halal · 2026 Babcock Rd, San Antonio</span>
-    <span style="display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap">
-      <span class="pill">حلال · Halal</span>
-      <a href="tel:+12108884114">(210) 888-4114</a>
-    </span>
+    <span><span class="dot"></span>Open today · 10a – 5p · 2026 Babcock Road</span>
+    <a href="tel:+12108884114">(210) 888-4114</a>
   </div>
 </div>
 
 <header class="nav">
   <div class="wrap nav-in">
     <a href="#" class="brand">
-      <span class="brand-mark"><img src="img/logo.png" alt="Capital Taco &amp; Shawarma"></span>
+      <span class="brand-mark"><img src="img/logo.png" alt="Taco Capital"></span>
       <span class="brand-text">
-        <span class="brand-name">Capital Taco <span class="amp">&amp;</span> Shawarma</span>
-        <span class="brand-tag">Tacos · Shawarma · Grill</span>
+        <span class="brand-name">Taco <span class="amp">Capital</span></span>
+        <span class="brand-tag">A Fusion of Levantine and Mexican Flavor</span>
       </span>
     </a>
     <nav class="nav-links">
@@ -350,13 +311,12 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="hero-eyebrow"><span class="spark"></span> Two cultures · One unforgettable bite</span>
         <h1>
-          <span class="l1">Middle East</span>
-          <span class="l2">meets</span>
-          <span class="l3">Mexico.</span>
+          <span class="l1">Taco</span>
+          <span class="l3">Capital.</span>
         </h1>
-        <p class="hero-sub">Shawarma off the spit, folded into warm pita with garlic sauce, tahini, sumac onions and a fistful of jalapeños. <b>Bold flavors. Two cultures. One unforgettable bite.</b></p>
+        <p class="hero-tagline">A Fusion of <span class="lev">Levantine</span> and <span class="mex">Mexican</span> Flavor</p>
+        <p class="hero-sub"><i>Bold Spices. Warm Traditions. One Unforgettable Experience.</i></p>
         <div class="hero-ctas">
           <a href="#menu" class="btn btn-flame btn-lg">
             See the Menu
@@ -367,15 +327,10 @@
             (210) 888-4114
           </a>
         </div>
-        <div class="hero-stats">
-          <div><b>Fresh</b><span>Ingredients prepped daily</span></div>
-          <div><b>Bold</b><span>House-blended spices</span></div>
-          <div><b>Halal</b><span>Every cut, every day</span></div>
-        </div>
       </div>
       <div class="hero-logo-card">
         <div class="glow"></div>
-        <img src="img/logo.png" alt="Capital Taco &amp; Shawarma logo">
+        <img src="img/logo.png" alt="Taco Capital logo">
       </div>
     </div>
   </div>
@@ -383,40 +338,48 @@
 
 <div class="spicebar">
   <div class="spicebar-track">
-    <span class="spicebar-item">Fresh Ingredients <span class="sep">✦</span> <span class="alt">Bold Spices</span> <span class="sep">✦</span> Two Cultures <span class="sep">✦</span> <span class="alt">Endless Flavor</span> <span class="sep">✦</span></span>
-    <span class="spicebar-item">Fresh Ingredients <span class="sep">✦</span> <span class="alt">Bold Spices</span> <span class="sep">✦</span> Two Cultures <span class="sep">✦</span> <span class="alt">Endless Flavor</span> <span class="sep">✦</span></span>
-    <span class="spicebar-item">Fresh Ingredients <span class="sep">✦</span> <span class="alt">Bold Spices</span> <span class="sep">✦</span> Two Cultures <span class="sep">✦</span> <span class="alt">Endless Flavor</span> <span class="sep">✦</span></span>
-    <span class="spicebar-item">Fresh Ingredients <span class="sep">✦</span> <span class="alt">Bold Spices</span> <span class="sep">✦</span> Two Cultures <span class="sep">✦</span> <span class="alt">Endless Flavor</span> <span class="sep">✦</span></span>
+    <span class="spicebar-item">One Cuisine <span class="sep">✦</span> <span class="alt">Two Cultures</span> <span class="sep">✦</span> Endless Flavor <span class="sep">✦</span></span>
+    <span class="spicebar-item">One Cuisine <span class="sep">✦</span> <span class="alt">Two Cultures</span> <span class="sep">✦</span> Endless Flavor <span class="sep">✦</span></span>
+    <span class="spicebar-item">One Cuisine <span class="sep">✦</span> <span class="alt">Two Cultures</span> <span class="sep">✦</span> Endless Flavor <span class="sep">✦</span></span>
+    <span class="spicebar-item">One Cuisine <span class="sep">✦</span> <span class="alt">Two Cultures</span> <span class="sep">✦</span> Endless Flavor <span class="sep">✦</span></span>
+    <span class="spicebar-item">One Cuisine <span class="sep">✦</span> <span class="alt">Two Cultures</span> <span class="sep">✦</span> Endless Flavor <span class="sep">✦</span></span>
+    <span class="spicebar-item">One Cuisine <span class="sep">✦</span> <span class="alt">Two Cultures</span> <span class="sep">✦</span> Endless Flavor <span class="sep">✦</span></span>
   </div>
 </div>
 
 <section class="featured">
   <div class="wrap">
     <div class="featured-head">
-      <span class="eyebrow">Straight from the menu</span>
-      <h2>The <span class="script">three</span> you came for.</h2>
-      <p>Tacos, a bowl, and our taqueria-tahini fusion — three plates straight off the same spit.</p>
+      <span class="eyebrow">From the kitchen</span>
+      <h2>Off the <span class="script">grill.</span></h2>
     </div>
     <div class="featured-grid">
-      <a href="#tacos" class="featured-card">
-        <img src="img/tacos.JPG" alt="Shawarma Tacos 3 Pack">
-        <span class="meta">
-          <span>Shawarma Tacos · 3 Pack</span>
-          <span class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
-        </span>
-      </a>
       <a href="#platters" class="featured-card">
-        <img src="img/ricebowl.JPG" alt="Shawarma Rice Bowl">
+        <img src="img/platter.jpg" alt="Chicken Al Pastor Platter" loading="lazy" onerror="this.parentElement.remove()">
         <span class="meta">
-          <span>Shawarma Rice Bowl</span>
-          <span class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
+          <span>Platters</span>
+          <span class="arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
         </span>
       </a>
       <a href="#tacos" class="featured-card">
-        <img src="img/tacomeettahini.JPG" alt="Taqueria Meets Tahini">
+        <img src="img/al-pastor-tacos.jpg" alt="Al Pastor Tacos" loading="lazy" onerror="this.parentElement.remove()">
         <span class="meta">
-          <span>Taqueria Meets Tahini</span>
-          <span class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
+          <span>Al Pastor</span>
+          <span class="arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
+        </span>
+      </a>
+      <a href="#desserts" class="featured-card">
+        <img src="img/fettuccine.jpg" alt="Fettuccine Chocolate Shawarma" loading="lazy" onerror="this.parentElement.remove()">
+        <span class="meta">
+          <span>Chocolate Shawarma</span>
+          <span class="arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
+        </span>
+      </a>
+      <a href="#desserts" class="featured-card">
+        <img src="img/kunafa.jpg" alt="Kunafa" loading="lazy" onerror="this.parentElement.remove()">
+        <span class="meta">
+          <span>Kunafa</span>
+          <span class="arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg></span>
         </span>
       </a>
     </div>
@@ -453,15 +416,6 @@
           <p>Today · 10a – 5p</p>
         </div>
       </div>
-      <div class="strip-item halal">
-        <span class="strip-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </span>
-        <div>
-          <h4>Halal</h4>
-          <p>حلال · Every cut, every day</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -470,136 +424,72 @@
   <div class="wrap">
     <div class="section-head">
       <div class="h-stack">
-        <span class="eyebrow">The full menu</span>
-        <h2>Tacos. Platters. <span class="script">Everything in between.</span></h2>
-        <p class="lede">All shawarma tacos come with garlic sauce, pickles, lettuce, tomato and onions in a warm pita. Platters served with white rice and cracked wheat.</p>
+        <span class="eyebrow">The menu</span>
+        <h2>Taco Capital <span class="script">menu.</span></h2>
       </div>
     </div>
 
     <nav class="menu-nav" id="menu-nav">
       <div class="menu-nav-track">
-        <a href="#tacos" class="active">Shawarma Tacos</a>
+        <a href="#tacos" class="active">Al Pastor</a>
         <a href="#platters">Platters</a>
         <a href="#appetizers">Appetizers</a>
         <a href="#desserts">Desserts</a>
-        <a href="#catering">Catering</a>
         <a href="#drinks">Drinks</a>
+        <a href="#catering">Catering</a>
       </div>
     </nav>
 
-    <!-- SHAWARMA TACOS -->
+    <!-- AL PASTOR -->
     <div class="menu-section" id="tacos">
       <div class="menu-section-head">
-        <span class="label">3 Pack</span>
-        <h3>Shawarma <span class="accent">Tacos</span></h3>
-        <p>Every order comes as a 3-pack. <span class="served">Served with garlic sauce, pickles, lettuce, tomatoes, onions · wrapped in pita</span></p>
+        <h3>Al Pastor</h3>
+        <p><span class="served">All meals include canned soda / bottle of water and bag of chips</span></p>
       </div>
 
       <div class="menu-list cols-2">
-        <div class="m-row">
-          <span class="nm"><span class="qty">3 ×</span> Lamb Shawarma Tacos</span>
-          <span class="pr">$13.99</span>
-          <span class="ds">Tender marinated lamb, garlic sauce, pickles, lettuce, tomatoes, onions.</span>
-        </div>
-        <div class="m-row">
-          <span class="nm"><span class="qty">3 ×</span> Beef Shawarma Tacos</span>
-          <span class="pr">$13.99</span>
-          <span class="ds">Juicy beef shawarma, tahini sauce, pickles, lettuce, tomatoes, onions.</span>
-        </div>
-        <div class="m-row">
-          <span class="nm"><span class="qty">3 ×</span> Chicken Shawarma Tacos</span>
-          <span class="pr">$12.99</span>
-          <span class="ds">Marinated chicken, garlic sauce, pickles, lettuce, tomatoes, onions.</span>
-        </div>
-        <div class="m-row">
-          <span class="nm"><span class="qty">3 ×</span> Shrimp &amp; Calamari Shawarma Tacos</span>
-          <span class="pr">$14.99</span>
-          <span class="ds">Grilled shrimp and calamari, garlic sauce, pickles, lettuce, tomatoes, onions.</span>
-        </div>
-        <div class="m-row">
-          <span class="nm"><span class="qty">3 ×</span> Liver Shawarma Tacos</span>
-          <span class="pr">$11.99</span>
-          <span class="ds">Seasoned beef liver, tahini sauce, pickles, lettuce, tomatoes, onions.</span>
-        </div>
-        <div class="m-row">
-          <span class="nm"><span class="qty">3 ×</span> Shish Tawook Shawarma Tacos</span>
-          <span class="pr">$12.99</span>
-          <span class="ds">Grilled chicken chunks, garlic sauce, pickles, lettuce, tomatoes, onions.</span>
-        </div>
-        <div class="m-row">
-          <span class="nm"><span class="qty">3 ×</span> Tamiya Shawarma Tacos</span>
-          <span class="pr">$12.99</span>
-          <span class="ds">Egyptian-style falafel, tahini sauce, pickles, lettuce, tomatoes, onions.</span>
-        </div>
-        <div class="m-row">
-          <span class="nm"><span class="qty">3 ×</span> Kafta Shawarma Tacos</span>
-          <span class="pr">$12.99</span>
-          <span class="ds">Grilled kafta (seasoned ground beef &amp; lamb), tahini sauce, pickles, lettuce, tomatoes, onions.</span>
-        </div>
-        <div class="m-row">
-          <span class="nm"><span class="qty">3 ×</span> Lamb Shish Kabob Shawarma Tacos</span>
-          <span class="pr">$14.99</span>
-          <span class="ds">Grilled lamb cubes, garlic sauce, pickles, lettuce, tomatoes, onions.</span>
-        </div>
-        <div class="m-row">
-          <span class="nm"><span class="qty">3 ×</span> Chicken Shish Kabob Shawarma Tacos</span>
-          <span class="pr">$13.99</span>
-          <span class="ds">Grilled chicken cubes, garlic sauce, pickles, lettuce, tomatoes, onions.</span>
-        </div>
-      </div>
-
-      <div class="spiceyour">
-        <div>
-          <h4>Spice it your way</h4>
-          <p>Mix &amp; match · ask the counter</p>
-        </div>
-        <div class="spiceyour-list">
-          <span class="gold">Garlic Sauce</span>
-          <span class="gold">Tahini</span>
-          <span class="hot">Hot Sauce</span>
-          <span>Pickles</span>
-          <span class="hot">Jalapeños</span>
-          <span>Sumac Onions</span>
-        </div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Lamb Tacos</span><span class="pr">$15.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Chicken Tacos</span><span class="pr">$13.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Shrimp + Calamari Tacos</span><span class="pr">$15.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Liver Tacos</span><span class="pr">$13.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Beef Tacos</span><span class="pr">$13.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Shish Tawook Tacos</span><span class="pr">$13.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Vegan Tacos</span><span class="pr">$12.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Kafta Tacos</span><span class="pr">$13.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Lamb Shish Kabob Tacos</span><span class="pr">$15.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Chicken Shish Kabob Tacos</span><span class="pr">$13.99</span></div>
+        <div class="m-row"><span class="nm">Cheeseburger</span><span class="pr">$13.99</span></div>
       </div>
     </div>
 
     <!-- PLATTERS -->
     <div class="menu-section" id="platters">
       <div class="menu-section-head">
-        <span class="label">Full Plates</span>
         <h3>Platters</h3>
-        <p><span class="served">Served with white rice &amp; cracked wheat</span></p>
       </div>
 
       <div class="menu-list cols-2">
-        <div class="m-row"><span class="nm">Lamb Shawarma</span><span class="pr">$15.99</span></div>
-        <div class="m-row"><span class="nm">Beef Shawarma</span><span class="pr">$15.99</span></div>
-        <div class="m-row"><span class="nm">Chicken Shawarma</span><span class="pr">$14.99</span></div>
-        <div class="m-row"><span class="nm">Kafta</span><span class="pr">$14.99</span></div>
-        <div class="m-row"><span class="nm">Lamb Shish Kabob</span><span class="pr">$16.99</span></div>
-        <div class="m-row"><span class="nm">Lamb Chops</span><span class="pr">$18.99</span></div>
-        <div class="m-row"><span class="nm">Chicken Kabob</span><span class="pr">$15.99</span></div>
-        <div class="m-row"><span class="nm">Shrimp &amp; Calamari</span><span class="pr">$16.99</span></div>
-        <div class="m-row"><span class="nm">Tamiya</span><span class="pr">$14.99</span></div>
+        <div class="m-row"><span class="nm">Lamb al Pastor over Rice</span><span class="pr">$17.99</span></div>
+        <div class="m-row"><span class="nm">Beef al Pastor over Rice</span><span class="pr">$14.99</span></div>
+        <div class="m-row"><span class="nm">Chicken al Pastor over Rice</span><span class="pr">$14.99</span></div>
+        <div class="m-row"><span class="nm">Kafta over Rice</span><span class="pr">$14.99</span></div>
+        <div class="m-row"><span class="nm">Lamb Shish Kabob over Rice</span><span class="pr">$18.99</span></div>
+        <div class="m-row"><span class="nm">Chicken Kabob over Rice</span><span class="pr">$14.99</span></div>
+        <div class="m-row"><span class="nm">Shrimp + Calamari over Rice</span><span class="pr">$22.99</span></div>
+        <div class="m-row"><span class="nm">Vegan platter</span><span class="pr">$13.99</span></div>
       </div>
     </div>
 
     <!-- APPETIZERS -->
     <div class="menu-section" id="appetizers">
       <div class="menu-section-head">
-        <span class="label">Mezze &amp; Sides</span>
         <h3>Appetizers</h3>
       </div>
 
       <div class="menu-list cols-2">
-        <div class="m-row"><span class="nm">Msabbaha</span><span class="pr">$6.99</span><span class="ds">Warm chickpeas, tahini, lemon, cumin.</span></div>
-        <div class="m-row"><span class="nm">Fatoosh</span><span class="pr">$6.99</span><span class="ds">Chopped salad with sumac, mint, crispy pita.</span></div>
-        <div class="m-row"><span class="nm">Mutabal</span><span class="pr">$6.99</span><span class="ds">Smoky charred eggplant, tahini, garlic.</span></div>
-        <div class="m-row"><span class="nm">Coleslaw</span><span class="pr">$4.99</span></div>
-        <div class="m-row"><span class="nm">Garlic Lebneh</span><span class="pr">$5.99</span><span class="ds">Strained yogurt, garlic, olive oil.</span></div>
-        <div class="m-row"><span class="nm">Muhammara</span><span class="pr">$6.99</span><span class="ds">Roasted red pepper &amp; walnut dip, pomegranate molasses.</span></div>
-        <div class="m-row"><span class="nm">Toom</span><span class="pr">$5.99</span><span class="ds">Whipped Lebanese garlic sauce — bring a friend.</span></div>
+        <div class="m-row"><span class="nm">Fattoush</span><span class="pr">$6.99</span></div>
+        <div class="m-row"><span class="nm">Coleslaw</span><span class="pr">$6.99</span></div>
+        <div class="m-row"><span class="nm">Toom</span><span class="pr">$7.99</span></div>
         <div class="m-row"><span class="nm">French Fries</span><span class="pr">$3.99</span></div>
         <div class="m-row"><span class="nm">Mozzarella Sticks</span><span class="pr">$6.99</span></div>
         <div class="m-row"><span class="nm">Chicken Nuggets</span><span class="pr">$6.99</span></div>
@@ -609,36 +499,50 @@
     <!-- DESSERTS -->
     <div class="menu-section" id="desserts">
       <div class="menu-section-head">
-        <span class="label">Sweet Finish</span>
         <h3>Desserts</h3>
       </div>
 
       <div class="menu-list cols-2">
-        <div class="m-row"><span class="nm">Osmaleh</span><span class="pr">$6.99</span><span class="ds">Crispy shredded phyllo, sweet cream, pistachio.</span></div>
-        <div class="m-row"><span class="nm">Kunafa</span><span class="pr">$6.99</span><span class="ds">Warm cheese pastry in rose syrup.</span></div>
-        <div class="m-row"><span class="nm">Baklava</span><span class="pr">$5.99</span><span class="ds">Layered phyllo, walnut &amp; pistachio, honey.</span></div>
-        <div class="m-row"><span class="nm">Fettuccine Chocolate Shawarma</span><span class="pr">$7.99</span><span class="ds">Chocolate "noodles" shaved off the cone — yes, really.</span></div>
-        <div class="m-row"><span class="nm">Dubai Chocolate Fruit Salad</span><span class="pr">$6.99</span><span class="ds">Fresh fruit, pistachio cream, Dubai-style chocolate.</span></div>
-        <div class="m-row"><span class="nm">Rice Pudding</span><span class="pr">$4.99</span><span class="ds">Slow-cooked, rosewater, cinnamon.</span></div>
+        <div class="m-row"><span class="nm">Fettuccine Chocolate Shawarma</span><span class="pr">$13.99</span></div>
+        <div class="m-row"><span class="nm">Dubai Chocolate Fruit Salad</span><span class="pr">$13.99</span></div>
+        <div class="m-row"><span class="nm">Halawet el Jibn <span class="qty" style="font-size:.7em">(6 pieces)</span></span><span class="pr">$9.99</span></div>
+        <div class="m-row"><span class="nm">Osmalieh</span><span class="pr">$6.99</span></div>
+        <div class="m-row"><span class="nm">Kunafa</span><span class="pr">$6.99</span></div>
+        <div class="m-row"><span class="nm">Rice Pudding</span><span class="pr">$6.99</span></div>
+      </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="menu-section" id="drinks">
+      <div class="menu-section-head">
+        <h3>Drinks</h3>
+      </div>
+
+      <div class="menu-list cols-2">
+        <div class="m-row"><span class="nm">Seasonal Fruit Juice</span><span class="pr">$5.99</span></div>
+        <div class="m-row"><span class="nm">Lemonade</span><span class="pr">$4.99</span></div>
+        <div class="m-row"><span class="nm">Tamarind Juice</span><span class="pr">$4.99</span></div>
+        <div class="m-row"><span class="nm">Soda</span><span class="pr">$2.99</span></div>
+        <div class="m-row"><span class="nm">Arabic Coffee</span><span class="pr">$3.99</span></div>
+        <div class="m-row"><span class="nm">Black Tea</span><span class="pr">$2.50</span></div>
+        <div class="m-row"><span class="nm">Water Bottle</span><span class="pr">$1.99</span></div>
       </div>
     </div>
 
     <!-- CATERING -->
     <div class="menu-section" id="catering">
       <div class="menu-section-head">
-        <span class="label">Feed the Room</span>
         <h3>Catering</h3>
-        <p><span class="served">Available as full tray or half tray · call for pricing</span></p>
+        <p><span class="served">Full Tray / Half Tray available · Pricing available upon request</span></p>
       </div>
 
       <div class="cater-grid">
-        <div class="ci">Lamb Shawarma</div>
-        <div class="ci">Beef Shawarma</div>
-        <div class="ci">Chicken Shawarma</div>
-        <div class="ci">Shrimp &amp; Calamari Shawarma</div>
-        <div class="ci">Liver Sandwich</div>
+        <div class="ci">Lamb al Pastor</div>
+        <div class="ci">Beef al Pastor</div>
+        <div class="ci">Chicken al Pastor</div>
+        <div class="ci">Shrimp + Calamari</div>
+        <div class="ci">Liver</div>
         <div class="ci">Shish Tawook</div>
-        <div class="ci">Tamiya</div>
         <div class="ci">Kafta</div>
         <div class="ci">Lamb Shish Kabob</div>
         <div class="ci">Chicken Shish Kabob</div>
@@ -647,56 +551,8 @@
       </div>
 
       <div class="cater-note">
-        <p><b>Plan an event?</b>Office lunches, family gatherings, weddings — we'll build a tray your guests will remember. Halal across the board.</p>
-        <a href="tel:+12108884114" class="btn btn-primary">Call for Pricing</a>
-      </div>
-    </div>
-
-    <!-- DRINKS -->
-    <div class="menu-section" id="drinks">
-      <div class="menu-section-head">
-        <span class="label">To Wash It Down</span>
-        <h3>Drinks</h3>
-      </div>
-
-      <div class="drinks">
-        <div class="d">Apricot Juice</div>
-        <div class="d">Lemonade</div>
-        <div class="d">Tamarind Juice</div>
-        <div class="d">Soda</div>
-        <div class="d">Arabic Coffee</div>
-        <div class="d">Black Tea</div>
-        <div class="d">Anise Tea</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="fusion">
-  <div class="wrap">
-    <div class="fusion-grid">
-      <div>
-        <span class="eyebrow" style="margin-bottom:18px;display:inline-block">The story</span>
-        <h2>
-          <span class="l1">Fusion</span>
-          <span class="l2">with</span>
-          <span class="l3">Tradition.</span>
-        </h2>
-        <p>Two kitchens, one counter. We took the shawarma spit our grandmothers swore by and folded it into the tortilla shape that San Antonio knows by heart. Same spices. Same fire. New shape, new neighborhood — Babcock Road.</p>
-        <div class="fusion-pillars">
-          <div class="pillar"><b>Fresh Ingredients</b><span>Prepped in-house every morning before doors open.</span></div>
-          <div class="pillar"><b>Bold Spices</b><span>House-blended sumac, baharat, and chili from both sides.</span></div>
-          <div class="pillar"><b>Two Cultures</b><span>Lebanese technique. Tex-Mex spirit. One unforgettable plate.</span></div>
-          <div class="pillar"><b>Endless Flavor</b><span>Ten taco variations, nine platters, six desserts. Come hungry.</span></div>
-        </div>
-      </div>
-      <div class="fusion-badge">
-        <div class="inner">
-          <div class="top">Middle East</div>
-          <div class="mid">meets</div>
-          <div class="bot">Mexico</div>
-          <div class="stars">✦ ✦ ✦</div>
-        </div>
+        <p><b>Pricing available upon request</b>Call for full tray and half tray pricing.</p>
+        <a href="tel:+12108884114" class="btn btn-primary">Call (210) 888-4114</a>
       </div>
     </div>
   </div>
@@ -706,20 +562,19 @@
   <div class="wrap">
     <div class="section-head">
       <div class="h-stack">
-        <span class="eyebrow">Come hungry</span>
-        <h2>Find <span class="script">us.</span></h2>
-        <p class="lede">Just off the medical center corridor on Babcock Rd. Easy parking out front. Dine-in or pickup.</p>
+        <span class="eyebrow">Visit</span>
+        <h2>2026 <span class="script">Babcock Road.</span></h2>
       </div>
     </div>
     <div class="visit-grid">
       <div class="map">
-        <iframe src="https://maps.google.com/maps?q=2026+Babcock+Rd+Suite+103+San+Antonio+TX+78229&output=embed&z=16" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Capital Taco &amp; Shawarma"></iframe>
+        <iframe src="https://maps.google.com/maps?q=2026+Babcock+Rd+Suite+103+San+Antonio+TX+78229&output=embed&z=16" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Taco Capital"></iframe>
       </div>
       <div class="visit-info">
-        <h3>2026 <span class="accent">Babcock Rd</span></h3>
+        <h3>Taco <span class="accent">Capital</span></h3>
         <div class="visit-block">
           <h4>Address</h4>
-          <p>2026 Babcock Rd, Suite 103<br>San Antonio, TX 78229</p>
+          <p>2026 Babcock Road<br>San Antonio, TX</p>
         </div>
         <div class="visit-block">
           <h4>Phone</h4>
@@ -740,8 +595,7 @@
 
 <section class="review-cta">
   <div class="wrap">
-    <h2>Eat well? <span class="script">Tell people.</span></h2>
-    <p>We're a small place trying something new. A kind word online goes a long way.</p>
+    <h2>One Cuisine. Two Cultures. <span class="script">Endless Flavor.</span></h2>
     <div class="ctas">
       <a class="btn btn-light btn-lg" href="https://share.google/bekzaeipnNQIluM69" target="_blank" rel="noopener">★ Review on Google</a>
       <a class="btn btn-out btn-lg" href="tel:+12108884114">Call (210) 888-4114</a>
@@ -755,13 +609,13 @@
       <div>
         <div class="foot-brand">
           <span class="brand-mark"><img src="img/logo.png" alt=""></span>
-          <span class="brand-name display">Capital Taco <span style="color:var(--gold)">&amp;</span> Shawarma</span>
+          <span class="brand-name display">Taco <span style="color:var(--gold)">Capital</span></span>
         </div>
-        <p class="foot-desc">Middle East meets Mexico on Babcock Rd. Halal. Bold spices. Two cultures, one unforgettable bite.</p>
+        <p class="foot-desc">A Fusion of Levantine and Mexican Flavor. Bold Spices. Warm Traditions. One Unforgettable Experience.</p>
       </div>
       <div class="foot-col">
         <h5>Visit</h5>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=2026+Babcock+Rd+Suite+103+San+Antonio+TX+78229" target="_blank" rel="noopener">2026 Babcock Rd, Ste 103<br>San Antonio, TX 78229</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=2026+Babcock+Rd+Suite+103+San+Antonio+TX+78229" target="_blank" rel="noopener">2026 Babcock Road<br>San Antonio, TX</a>
         <a href="tel:+12108884114">(210) 888-4114</a>
       </div>
       <div class="foot-col">
@@ -771,7 +625,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Capital Taco &amp; Shawarma · San Antonio, TX · Halal</span>
+      <span>© 2026 Taco Capital · San Antonio, TX</span>
       <div class="foot-social">
         <a href="#" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.7c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>

@@ -11,7 +11,7 @@
 <meta property="og:image" content="img/logo2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Frijole&family=Rye&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="img/logo2.png">
 <link rel="apple-touch-icon" href="img/logo2.png">
 <style>
@@ -235,6 +235,70 @@
   @media(min-width:980px){.drinks{grid-template-columns:repeat(4,1fr)}}
   .drinks .d{padding:14px 16px;background:var(--card);border:1px solid var(--rule-soft);border-radius:8px;font-family:var(--display-2);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);display:flex;align-items:center;gap:10px}
   .drinks .d::before{content:'';width:8px;height:8px;background:var(--flame);border-radius:50%;flex:0 0 auto}
+
+  /* MENU YELLOW THEME -- overrides the dark menu styles above */
+  .menu{
+    background-color:#F5C13F;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(255,255,255,.18), transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(217,162,39,.30), transparent 55%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.16  0 0 0 0 0.10  0 0 0 0 0.03  0 0 0 0.06 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+    background-size:auto,auto,200px 200px;
+    background-position:center,center,top left;
+    background-repeat:no-repeat,no-repeat,repeat;
+    background-attachment:scroll,scroll,scroll;
+    color:#2a1808;
+    border-top:6px solid #2a1808;
+    border-bottom:6px solid #2a1808;
+  }
+  @media(max-width:760px){.menu{background-image:radial-gradient(ellipse at 20% 10%, rgba(255,255,255,.18), transparent 50%),radial-gradient(ellipse at 80% 90%, rgba(217,162,39,.30), transparent 55%)}}
+  .menu::before{display:none}
+
+  /* page-level section head over the yellow */
+  .menu .section-head h2{color:#2a1808}
+  .menu .section-head h2 .script{color:#C8102E}
+  .menu .section-head .eyebrow{color:#2D5F2D}
+  .menu .section-head .lede{color:rgba(42,24,8,.7)}
+
+  /* sticky menu nav restyled for yellow */
+  .menu-nav{background:#F5C13F;border-top-color:rgba(42,24,8,.25);border-bottom-color:rgba(42,24,8,.25);backdrop-filter:none;-webkit-backdrop-filter:none}
+  .menu-nav a{color:#2a1808;font-family:'Frijole',serif;font-size:14px;letter-spacing:.06em;font-weight:400}
+  .menu-nav a:hover{color:#C8102E}
+  .menu-nav a.active{color:#C8102E;border-bottom-color:#C8102E}
+
+  /* section heads */
+  .menu .menu-section-head .label{background:#2a1808;border-color:#2D5F2D;color:#F5C13F}
+  .menu .menu-section-head .label::before,.menu .menu-section-head .label::after{color:#C8102E}
+  .menu .menu-section-head h3{font-family:'Frijole','Rye',serif;color:#2D5F2D;font-size:clamp(36px,5vw,56px);letter-spacing:0;text-shadow:2px 2px 0 rgba(42,24,8,.15)}
+  .menu .menu-section-head h3 .accent{color:#C8102E}
+  .menu .menu-section-head p{color:rgba(42,24,8,.85)}
+  .menu .menu-section-head p .served{color:#2D5F2D}
+
+  /* rows with dotted leaders */
+  .menu .menu-list{border-top:2px dashed rgba(42,24,8,.3)}
+  .menu .m-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 6px;padding:14px 0;border-bottom:1px dotted rgba(42,24,8,.2)}
+  .menu .m-row .nm{font-family:'Inter',sans-serif;font-size:16px;font-weight:600;letter-spacing:.02em;text-transform:none;color:#2a1808;flex:0 1 auto;order:1}
+  .menu .m-row .nm .qty{color:#C8102E;margin-right:6px;font-weight:700}
+  .menu .m-row .nm .badge{background:rgba(200,16,46,.15);color:#C8102E}
+  .menu .m-row::before{content:'';flex:1;border-bottom:2px dotted rgba(42,24,8,.5);margin:0 6px 5px;order:2;min-width:24px}
+  .menu .m-row .pr{font-family:'Inter',sans-serif;font-weight:700;font-size:17px;color:#C8102E;flex:0 0 auto;order:3;letter-spacing:0}
+  .menu .m-row .ds{font-family:'Inter',sans-serif;color:rgba(42,24,8,.7);font-style:italic;flex:1 0 100%;order:4;margin-top:2px}
+
+  /* catering grid on yellow */
+  .menu .cater-grid .ci{background:rgba(255,255,255,.35);border:1px solid rgba(42,24,8,.25);color:#2a1808;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.02em;text-transform:none;font-size:14.5px}
+  .menu .cater-grid .ci::before{background:#C8102E}
+  .menu .cater-note{background:rgba(255,255,255,.35);border-color:rgba(42,24,8,.25)}
+  .menu .cater-note p{color:rgba(42,24,8,.85)}
+  .menu .cater-note p b{color:#2D5F2D;font-family:'Frijole',serif;letter-spacing:0}
+  .menu .cater-note .btn-primary{background:#2D5F2D;color:#F5C13F;border-color:#2D5F2D}
+  .menu .cater-note .btn-primary:hover{background:#1f4520;border-color:#1f4520}
+
+  /* drinks pills on yellow */
+  .menu .drinks .d{background:rgba(255,255,255,.35);border-color:rgba(42,24,8,.25);color:#2a1808;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.02em;text-transform:none;font-size:14.5px}
+  .menu .drinks .d::before{background:#C8102E}
+
+  /* ornamental flourish */
+  .menu .menu-section-head h3::before,.menu .menu-section-head h3::after{content:'❦';color:#C8102E;font-size:.6em;margin:0 .4em;vertical-align:.25em;opacity:.8}
 
   /* visit */
   .visit{padding:clamp(56px,8vw,96px) 0;background:var(--bg-2);border-top:1px solid var(--rule-soft)}
@@ -460,52 +524,30 @@
 
     <nav class="menu-nav" id="menu-nav">
       <div class="menu-nav-track">
-        <a href="#tacos" class="active">Al Pastor</a>
-        <a href="#platters">Platters</a>
+        <a href="#tacos" class="active">Tacos</a>
         <a href="#appetizers">Appetizers</a>
+        <a href="#platters">Platters</a>
         <a href="#desserts">Desserts</a>
         <a href="#drinks">Drinks</a>
         <a href="#catering">Catering</a>
       </div>
     </nav>
 
-    <!-- AL PASTOR -->
+    <!-- TACOS -->
     <div class="menu-section" id="tacos">
       <div class="menu-section-head">
-        <h3>Al Pastor</h3>
-        <p><span class="served">All meals include canned soda / bottle of water and bag of chips</span></p>
+        <h3>Tacos</h3>
+        <p><span class="served">Includes canned soda / bottle of water and bag of chips</span></p>
       </div>
 
       <div class="menu-list cols-2">
-        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Lamb Tacos</span><span class="pr">$15.99</span></div>
-        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Chicken Tacos</span><span class="pr">$13.99</span></div>
-        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Shrimp + Calamari Tacos</span><span class="pr">$15.99</span></div>
-        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Liver Tacos</span><span class="pr">$13.99</span></div>
-        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Beef Tacos</span><span class="pr">$13.99</span></div>
-        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Shish Tawook Tacos</span><span class="pr">$13.99</span></div>
-        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Vegan Tacos</span><span class="pr">$12.99</span></div>
-        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Kafta Tacos</span><span class="pr">$13.99</span></div>
-        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Lamb Shish Kabob Tacos</span><span class="pr">$15.99</span></div>
-        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Chicken Shish Kabob Tacos</span><span class="pr">$13.99</span></div>
-        <div class="m-row"><span class="nm">Cheeseburger</span><span class="pr">$13.99</span></div>
-      </div>
-    </div>
-
-    <!-- PLATTERS -->
-    <div class="menu-section" id="platters">
-      <div class="menu-section-head">
-        <h3>Platters</h3>
-      </div>
-
-      <div class="menu-list cols-2">
-        <div class="m-row"><span class="nm">Lamb al Pastor over Rice</span><span class="pr">$17.99</span></div>
-        <div class="m-row"><span class="nm">Beef al Pastor over Rice</span><span class="pr">$14.99</span></div>
-        <div class="m-row"><span class="nm">Chicken al Pastor over Rice</span><span class="pr">$14.99</span></div>
-        <div class="m-row"><span class="nm">Kafta over Rice</span><span class="pr">$14.99</span></div>
-        <div class="m-row"><span class="nm">Lamb Shish Kabob over Rice</span><span class="pr">$18.99</span></div>
-        <div class="m-row"><span class="nm">Chicken Kabob over Rice</span><span class="pr">$14.99</span></div>
-        <div class="m-row"><span class="nm">Shrimp + Calamari over Rice</span><span class="pr">$22.99</span></div>
-        <div class="m-row"><span class="nm">Vegan platter</span><span class="pr">$13.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Lamb al Pastor Tacos</span><span class="pr">$16.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Chicken al Pastor Tacos</span><span class="pr">$14.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Shrimp + Calamari al Pastor Tacos</span><span class="pr">$16.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Beef al Pastor Tacos</span><span class="pr">$14.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Kafta Sijok al Pastor Tacos</span><span class="pr">$14.99</span></div>
+        <div class="m-row"><span class="nm"><span class="qty">3 ×</span> Fish al Pastor Tacos</span><span class="pr">$16.99</span></div>
+        <div class="m-row"><span class="nm">Cheeseburger</span><span class="pr">$14.99</span></div>
       </div>
     </div>
 
@@ -516,12 +558,27 @@
       </div>
 
       <div class="menu-list cols-2">
-        <div class="m-row"><span class="nm">Fattoush</span><span class="pr">$6.99</span></div>
-        <div class="m-row"><span class="nm">Coleslaw</span><span class="pr">$6.99</span></div>
+        <div class="m-row"><span class="nm">Salad</span><span class="pr">$6.99</span></div>
         <div class="m-row"><span class="nm">Toom</span><span class="pr">$7.99</span></div>
         <div class="m-row"><span class="nm">French Fries</span><span class="pr">$3.99</span></div>
         <div class="m-row"><span class="nm">Mozzarella Sticks</span><span class="pr">$6.99</span></div>
         <div class="m-row"><span class="nm">Chicken Nuggets</span><span class="pr">$6.99</span></div>
+      </div>
+    </div>
+
+    <!-- PLATTERS -->
+    <div class="menu-section" id="platters">
+      <div class="menu-section-head">
+        <h3>Platters</h3>
+      </div>
+
+      <div class="menu-list cols-2">
+        <div class="m-row"><span class="nm">Lamb al Pastor</span><span class="pr">$19.99</span></div>
+        <div class="m-row"><span class="nm">Chicken al Pastor</span><span class="pr">$17.99</span></div>
+        <div class="m-row"><span class="nm">Shrimp + Calamari al Pastor</span><span class="pr">$26.99</span></div>
+        <div class="m-row"><span class="nm">Beef al Pastor</span><span class="pr">$17.99</span></div>
+        <div class="m-row"><span class="nm">Kafta Sijok al Pastor</span><span class="pr">$17.99</span></div>
+        <div class="m-row"><span class="nm">Fish al Pastor</span><span class="pr">$26.99</span></div>
       </div>
     </div>
 
@@ -536,7 +593,7 @@
         <div class="m-row"><span class="nm">Dubai Chocolate Fruit Salad</span><span class="pr">$13.99</span></div>
         <div class="m-row"><span class="nm">Halawet el Jibn <span class="qty" style="font-size:.7em">(6 pieces)</span></span><span class="pr">$9.99</span></div>
         <div class="m-row"><span class="nm">Osmalieh</span><span class="pr">$6.99</span></div>
-        <div class="m-row"><span class="nm">Kunafa</span><span class="pr">$6.99</span></div>
+        <div class="m-row"><span class="nm">Kunafa</span><span class="pr">$8.99</span></div>
         <div class="m-row"><span class="nm">Rice Pudding</span><span class="pr">$6.99</span></div>
       </div>
     </div>
@@ -570,11 +627,8 @@
         <div class="ci">Beef al Pastor</div>
         <div class="ci">Chicken al Pastor</div>
         <div class="ci">Shrimp + Calamari</div>
-        <div class="ci">Liver</div>
-        <div class="ci">Shish Tawook</div>
-        <div class="ci">Kafta</div>
-        <div class="ci">Lamb Shish Kabob</div>
-        <div class="ci">Chicken Shish Kabob</div>
+        <div class="ci">Kafta Sijok</div>
+        <div class="ci">Fish</div>
         <div class="ci">Fettuccine Alfredo with Shrimp</div>
         <div class="ci">Macaroni Bechamel</div>
       </div>

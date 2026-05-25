@@ -178,7 +178,7 @@
   .section-head .lede{font-size:15.5px;color:var(--ink-soft);max-width:42ch;margin:14px 0 0;line-height:1.55}
 
   /* menu */
-  .menu{padding:clamp(64px,9vw,108px) 0;position:relative}
+  .menu{padding:clamp(64px,9vw,108px) 0;position:relative;background-color:var(--bg);background-image:linear-gradient(180deg, rgba(10,9,7,.82) 0%, rgba(10,9,7,.92) 100%), url('img/tacos-tray.jpeg');background-size:cover,cover;background-position:center,center;background-repeat:no-repeat,no-repeat;background-attachment:scroll,fixed}
   .menu::before{content:'';position:absolute;inset:0;background-image:
     radial-gradient(800px 400px at 80% 0%, rgba(245,193,63,.06), transparent 60%);
     pointer-events:none}
@@ -242,7 +242,7 @@
   .hours .today{font-weight:700;color:var(--gold)}
 
   /* review CTA */
-  .review-cta{background-color:var(--flame);background-image:linear-gradient(135deg, rgba(238,90,36,.55) 0%, rgba(10,9,7,.65) 100%), url('img/tacos-tray.jpeg');background-size:cover,cover;background-position:center,center;background-repeat:no-repeat,no-repeat;color:#fff;padding:clamp(48px,7vw,76px) 0;text-align:center;position:relative;overflow:hidden}
+  .review-cta{background:var(--flame);color:#fff;padding:clamp(48px,7vw,76px) 0;text-align:center;position:relative;overflow:hidden}
   .review-cta::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.05) 0 18px,transparent 18px 36px);pointer-events:none}
   .review-cta h2{font-family:var(--display);font-size:clamp(36px,5vw,56px);font-weight:400;margin:0 0 14px;letter-spacing:.01em;line-height:.95;text-transform:uppercase;position:relative}
   .review-cta h2 .script{font-family:var(--serif);font-style:italic;font-weight:600;text-transform:none;color:#0a0907;letter-spacing:0}

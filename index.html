@@ -190,6 +190,7 @@
 
   /* menu */
   .menu{padding:clamp(64px,9vw,108px) 0;position:relative;background-color:var(--bg);background-image:linear-gradient(180deg, rgba(10,9,7,.82) 0%, rgba(10,9,7,.92) 100%), url('img/tacos-tray.jpeg');background-size:cover,cover;background-position:center,center;background-repeat:no-repeat,no-repeat;background-attachment:scroll,fixed}
+  @media(max-width:760px){.menu{background-image:none;background-color:var(--bg)}}
   .menu::before{content:'';position:absolute;inset:0;background-image:
     radial-gradient(800px 400px at 80% 0%, rgba(245,193,63,.06), transparent 60%);
     pointer-events:none}

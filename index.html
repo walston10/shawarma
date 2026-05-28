@@ -166,6 +166,39 @@
   .rot-media{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--rule);background:#0a0907;aspect-ratio:4/3}
   .rot-media video, .rot-media img{width:100%;height:100%;object-fit:cover;display:block}
 
+  /* gallery */
+  .gallery{padding:clamp(48px,7vw,84px) 0;position:relative;background:var(--bg);border-top:1px solid var(--rule-soft)}
+  .gallery::before{content:'';position:absolute;inset:0;background:radial-gradient(800px 420px at 50% 0%, rgba(238,90,36,.07), transparent 60%);pointer-events:none}
+  .gallery-head{text-align:center;max-width:680px;margin:0 auto 40px;position:relative}
+  .gallery-head .eyebrow{display:block;margin-bottom:12px}
+  .gallery-head h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,56px);margin:0;letter-spacing:.005em;line-height:.95;text-transform:uppercase;color:var(--cream)}
+  .gallery-head h2 .script{font-family:var(--serif);font-weight:600;font-style:italic;text-transform:none;color:var(--gold);letter-spacing:0;font-size:.78em}
+  .gallery-head .lede{font-size:15px;color:var(--ink-soft);margin:14px auto 0;max-width:46ch;line-height:1.55}
+  .gallery-grid{columns:2;column-gap:14px;position:relative}
+  @media(min-width:640px){.gallery-grid{columns:3;column-gap:16px}}
+  @media(min-width:1000px){.gallery-grid{columns:4;column-gap:18px}}
+  .g-item{break-inside:avoid;margin:0 0 14px;display:block;width:100%;border:0;padding:0;background:#0a0907;border-radius:12px;overflow:hidden;cursor:pointer;position:relative;border:1px solid var(--rule-soft)}
+  @media(min-width:640px){.g-item{margin-bottom:16px}}
+  @media(min-width:1000px){.g-item{margin-bottom:18px}}
+  .g-item img{width:100%;height:auto;display:block;transition:transform .35s ease, opacity .35s ease}
+  .g-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(238,90,36,.18));opacity:0;transition:opacity .25s ease}
+  .g-item:hover img{transform:scale(1.04)}
+  .g-item:hover::after{opacity:1}
+  .g-item:hover{border-color:var(--gold);box-shadow:0 14px 40px rgba(238,90,36,.18)}
+  .g-item:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;background:rgba(5,4,3,.94);padding:24px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+  .lb.open{display:flex}
+  .lb img{max-width:92vw;max-height:84vh;border-radius:10px;box-shadow:0 24px 80px rgba(0,0,0,.6);border:1px solid var(--rule)}
+  .lb-btn{position:absolute;background:rgba(0,0,0,.55);border:1px solid var(--rule);color:var(--cream);width:52px;height:52px;border-radius:50%;font-size:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s,color .15s;line-height:1}
+  .lb-btn:hover{background:var(--gold);color:#0a0907;border-color:var(--gold)}
+  .lb-close{top:20px;right:20px;font-size:22px}
+  .lb-prev{left:max(16px,3vw);top:50%;transform:translateY(-50%)}
+  .lb-next{right:max(16px,3vw);top:50%;transform:translateY(-50%)}
+  .lb-count{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-family:var(--display-2);letter-spacing:.18em;font-size:14px;color:var(--gold);background:rgba(0,0,0,.5);padding:6px 16px;border-radius:999px;border:1px solid var(--rule)}
+  @media(max-width:600px){.lb-prev{left:8px}.lb-next{right:8px}.lb-btn{width:44px;height:44px;font-size:20px}}
+
   /* info strip */
   .strip{background:var(--bg-2);border-bottom:1px solid var(--rule-soft)}
   .strip-grid{display:grid;grid-template-columns:1fr;gap:0;padding:0}
@@ -366,6 +399,7 @@
     </a>
     <nav class="nav-links">
       <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
       <a href="#catering">Catering</a>
       <a href="#visit">Visit</a>
       <a href="tel:+12108884114" class="btn btn-primary">
@@ -641,6 +675,34 @@
   </div>
 </section>
 
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="gallery-head">
+      <span class="eyebrow">The spread</span>
+      <h2>From our <span class="script">kitchen.</span></h2>
+      <p class="lede">Tacos, platters, catering trays and house desserts — straight off the rotisserie and onto the table.</p>
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+      <button class="g-item" type="button"><img src="img/gallery/gallery-03.jpg" alt="Al pastor tacos on a wooden board" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-13.jpg" alt="Street tacos with fresh toppings" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-01.jpg" alt="Catering tray topped with tomato and feta" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-08.jpg" alt="Chocolate-dipped strawberries on skewers" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-15.jpg" alt="Plated tacos with house sauce" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-05.jpg" alt="Macaroni bechamel catering tray" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-11.jpg" alt="Rotisserie al pastor meat" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-06.jpg" alt="Sliders with creamy slaw" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-14.jpg" alt="Tacos finished with cilantro" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-12.jpg" alt="Chocolate fettuccine shawarma dessert" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-02.jpg" alt="Catering tray close up" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-09.jpg" alt="Appetizer dip cups" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-10.jpg" alt="Fresh fruit drinks and lemonade" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-04.jpg" alt="Halawet el Jibn cheese dessert rolls" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-07.jpg" alt="Creamy pasta salad with strawberry parfait" loading="lazy"></button>
+      <button class="g-item" type="button"><img src="img/gallery/gallery-16.jpg" alt="House specialty plate" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
 <section class="visit" id="visit">
   <div class="wrap">
     <div class="section-head">
@@ -721,7 +783,44 @@
   </div>
 </footer>
 
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-btn lb-close" id="lb-close" aria-label="Close">✕</button>
+  <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous">‹</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-btn lb-next" id="lb-next" aria-label="Next">›</button>
+  <div class="lb-count" id="lb-count"></div>
+</div>
+
 <script>
+  // Lightbox gallery
+  (function(){
+    var grid=document.getElementById('gallery-grid');
+    if(!grid) return;
+    var imgs=Array.prototype.slice.call(grid.querySelectorAll('img'));
+    var lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img'), lbCount=document.getElementById('lb-count');
+    var i=0;
+    function show(n){
+      i=(n+imgs.length)%imgs.length;
+      lbImg.src=imgs[i].src; lbImg.alt=imgs[i].alt;
+      lbCount.textContent=(i+1)+' / '+imgs.length;
+    }
+    function open(n){ show(n); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+    function close(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+    grid.querySelectorAll('.g-item').forEach(function(btn,idx){
+      btn.addEventListener('click',function(){ open(idx); });
+    });
+    document.getElementById('lb-close').addEventListener('click',close);
+    document.getElementById('lb-next').addEventListener('click',function(){ show(i+1); });
+    document.getElementById('lb-prev').addEventListener('click',function(){ show(i-1); });
+    lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+    document.addEventListener('keydown',function(e){
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') close();
+      else if(e.key==='ArrowRight') show(i+1);
+      else if(e.key==='ArrowLeft') show(i-1);
+    });
+  })();
+
   // Menu nav: highlight current section based on viewport position
   (function(){
     var links=document.querySelectorAll('#menu-nav a');
